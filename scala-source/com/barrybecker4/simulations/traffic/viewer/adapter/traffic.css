@@ -1,0 +1,46 @@
+graph {
+  fill-mode: plain;
+  padding: 80px;
+  fill-color: white;
+}
+
+node {
+  shape: circle;
+  size: 8px;
+  fill-color: rgba(20, 20, 80, 10);
+  fill-mode: plain;
+  stroke-mode: none;
+  /*text-visibility-mode: zoom-range;
+  text-visibility: 0, 0.9;*/
+  text-mode: normal;
+  text-alignment: center;
+  text-size: 42px;
+  text-color: rgba(20, 20, 100, 60);
+  text-offset: 0px, -30px;
+  z-index: 10;
+}
+
+edge {
+  size: 8px;
+  fill-mode: plain;
+  fill-color: rgba(20, 20, 80, 30);
+  stroke-mode: none;
+  arrow-size: 24px, 6px;
+  shape: line;
+  /*shape: cubic-curve;*/
+  z-index:11;
+}
+
+sprite {
+  shape: box;
+  size: 24px, 12px;
+  fill-mode: plain;
+  stroke-mode: none;
+  text-mode: normal;
+  text-alignment: under;
+  text-size: 14px;
+  text-style: bold;
+  /* Rotate the sprite based on the direction of the edge */
+  sprite-orientation: from;
+  z-index:100;
+}

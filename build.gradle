@@ -12,26 +12,27 @@ plugins {
     id "com.github.maiflai.scalatest" version "0.32" // needed to run scala tests
 }
 
-description = '<description of your project>'
+description = 'Traffic flow simulation'
 group = 'com.barrybecker4'
-version = '1.8-SNAPSHOT'
+version = '1.0-SNAPSHOT'
 ext {
-    archivesBaseName = 'bb4-project-template'
-    mainClass = 'com.barrybecker4.newpackage.HelloWorld'
+    archivesBaseName = 'bb4-traffic-simulation'
+    mainClass = "com.barrybecker4.simulations.traffic.viewer.TrafficApp"
 }
 
 apply from: project.buildscript.classLoader.getResource('bb4.gradle').toURI()
 
-task runHelloWorld(type: JavaExec, dependsOn: classes) {
-    group = 'application'
-    mainClass = 'com.barrybecker4.newpackage.HelloWorld'
-    classpath = sourceSets.main.runtimeClasspath
-}
-
 dependencies {
     implementation 'com.barrybecker4:bb4-common:1.9-SNAPSHOT'
+    implementation 'com.barrybecker4:bb4-shortest-paths:1.9-SNAPSHOT'
+    implementation 'org.scala-lang.modules:scala-parallel-collections_3:1.0.4'
+    implementation 'com.barrybecker4:bb4-math:1.8'
+    // for graph visualization
+    implementation 'org.graphstream:gs-core:2.0'
+    implementation 'org.graphstream:gs-ui-swing:2.0'
 }
 
-// This allows publishing of this project library to Sonatype
+
+// This allows publishing of this project library to Sonatype so that it can be used in other projects
 apply from: project.buildscript.classLoader.getResource('bb4-publish.gradle').toURI()
 
