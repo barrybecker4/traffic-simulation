@@ -18,7 +18,7 @@ import scala.concurrent.Future
 import scala.io.Source
 
 
-/** Draws the shortest paths and allows interacting with them.
+/** Draws the traffic graph and simulates cars on streets.
  */
 object TrafficViewerFrame {
   private val TRAFFIC_GRAPHS_PREFIX = "scala-test/com/barrybecker4/simulations/traffic/data/"
