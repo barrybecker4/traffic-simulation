@@ -37,9 +37,7 @@ class StatisticsPanel(graph: Graph) extends JPanel {
 
   val scheduler: ScheduledExecutorService = Executors.newScheduledThreadPool(1)
 
-  scheduler.scheduleAtFixedRate(new Runnable {
-    def run(): Unit = updateStats()
-  }, 0, 2, TimeUnit.SECONDS)
+  scheduler.scheduleAtFixedRate(() => updateStats(), 0, 2, TimeUnit.SECONDS)
 
   private def createMetricTable(): JTable = {
     val tableModel = new StatsTableModel(data)

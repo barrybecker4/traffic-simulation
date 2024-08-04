@@ -39,6 +39,7 @@ class DumbTrafficSignal(numStreets: Int) extends TrafficSignal(numStreets) {
    */
   def handleTraffic(sortedVehicles: IndexedSeq[VehicleSprite],
                     portId: Int, edgeLen: Double, deltaTime: Double): Unit = {
+    if (sortedVehicles.isEmpty) return
     val lightState = getLightState(portId)
     val vehicleClosestToLight = sortedVehicles.last
 
