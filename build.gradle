@@ -17,7 +17,7 @@ group = 'com.barrybecker4'
 version = '1.0-SNAPSHOT'
 ext {
     archivesBaseName = 'bb4-traffic-simulation'
-    mainClass = "com.barrybecker4.simulations.traffic.viewer.TrafficApp"
+    mainClass = "com.barrybecker4.simulations.traffic.TrafficApp"
 }
 
 apply from: project.buildscript.classLoader.getResource('bb4.gradle').toURI()

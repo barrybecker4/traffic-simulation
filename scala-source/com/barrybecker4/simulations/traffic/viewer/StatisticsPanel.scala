@@ -29,11 +29,11 @@ class StatisticsPanel(graph: Graph) extends JPanel {
     override def getColumnName(column: Int): String = columnNames(column)
   }
 
-  val table = createMetricTable()
+  private val table = createMetricTable()
   this.setLayout(new BorderLayout())
   this.add(table, BorderLayout.CENTER)
 
-  var startTime = System.currentTimeMillis()
+  private val startTime = System.currentTimeMillis()
 
   val scheduler: ScheduledExecutorService = Executors.newScheduledThreadPool(1)
 
